@@ -1,5 +1,10 @@
 #!/usr/bin/make -f
 
+export GOROOT := /usr/lib/go-1.18
+export GOPATH := $(CURDIR)
+export PATH := $(PATH):$(GOROOT)/bin:$(GOPATH)/bin
+export GOCACHE := /tmp
+
 DPKG_EXPORT_BUILDFLAGS=1
 include /usr/share/dpkg/default.mk
 DEB_BUILD_OPTIONS=nostrip
